@@ -9,12 +9,12 @@ import {
 const user = Router()
 
 user.get('/:id', (req, res) => {
-  getUser(req.params.id, res).then(data => {
+  getUser(req.params.id, res).then(({data}) => {
     if (!data) {
       return res.status(404).send()
     }
-    console.log({data})
-    res.send({data})
+    console.log(data)
+    res.send(data)
   })
 })
 
